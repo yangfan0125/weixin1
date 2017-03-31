@@ -1,0 +1,231 @@
+/**index.wxss**/
+/**index.wxss**/  
+page{
+    background: #f2f2f2;
+}
+.swiper-tab{  
+    width: 100%;  
+    box-shadow: 0 2rpx 2rpx #c3c3c3;
+    text-align: center;  
+    line-height: 88rpx;
+    background: #fff;
+    position: fixed;
+    left: 0;
+    top: 0rpx;
+    z-index: 999;
+    }  
+.swiper-tab-list{  
+    display: inline-block;  
+    width: 25%;  
+    color: #000;  
+    font-size: 36rpx;
+    font-weight: 600;
+    font-family: "Adobe 黑体 Std";
+    margin: 0 12%;
+}  
+.on{ color: #2faece;  
+    border-bottom: 5rpx solid #2faece;}  
+.line{
+    width: 2rpx;
+    height: 70rpx;
+    background: #C3C3C3;
+    position: relative;
+    top: 18rpx;
+    left: 0;
+    margin: 0;
+}  
+.swiper-box{ display: block; height: 100%; width: 100%; overflow: hidden;margin-top: 118rpx; }  
+.taxtype{
+    width: 100%;
+    height: 88rpx;
+    margin-top: 20rpx;
+    background: #fef7e7;
+    color: #202020;
+    font-family: "Adobe 黑体 Std";
+    font-size: 36rpx;
+    line-height: 88rpx;
+    text-align: center;
+    font-weight: 600;
+}
+.part{
+    width: 100%;
+    height: auto;
+}
+.title{
+    background: url(../../images/icon.png) no-repeat;
+    background-size:33rpx 47rpx; 
+    width: 100%;
+    height: 47rpx;
+    padding-left: 42rpx;
+    margin:30rpx 0 12rpx 32rpx;
+    box-sizing: border-box;
+    vertical-align: middle;
+    line-height:47rpx;
+    color: #2faece;
+    font-size: 30rpx;
+}
+.wrap{
+    background: #fff;
+    width: 100%;
+    height: auto;
+}
+.wrap::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.inputitem{
+    width: 96.5%;
+    height: 90rpx;
+    border-bottom: 1px solid #E3E3E3;
+    box-sizing: border-box;
+    float: right;
+    font-size: 30rpx;
+    font-family: "Adobe 黑体 Std";
+    line-height: 90rpx;
+    color: #202020;
+}
+.pickeritem{
+    color: #c3c3c3;
+}
+.placeholder{
+    color: #c3c3c3;
+}
+.pickercontent{
+    display: inline-block;
+    color: #202020;
+}
+
+.radio-group{
+    display: inline-block;
+}
+.radiotext{
+    font-size: 30rpx;
+    font-family: "Adobe 黑体 Std";
+    color: #202020;
+    line-height: 88rpx;
+    margin: 0 50rpx 0 30rpx;    
+    display: inline-block;
+}
+.inputitemshort{
+    width: 70%;
+    display: inline-block;
+}
+.viewtext{
+    float: left;
+    width: 180rpx;
+    height: 90rpx;
+    font-size: 30rpx;
+    font-family: "Adobe 黑体 Std";
+    color: #202020;
+    line-height: 90rpx;
+    margin: 0 30rpx 0 0;
+}
+.picker{
+    float: right;
+    width: 490rpx;
+    height: 90rpx;
+    line-height: 90rpx;
+    font-size: 30rpx;
+    font-family: "Adobe 黑体 Std";
+    color: #202020;
+}
+.wrapborder{
+    width: 96.5%;
+    height: auto;
+    float: right;
+    border-bottom: 1px solid #E3E3E3;
+}
+.wrapborder:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.inputlast{
+    border-bottom: none;
+}
+.radiotext1{
+    margin-left: 0;
+}
+.radiotext2{
+    margin-left: 0;
+    margin-right: 20rpx;
+}
+.btn{
+    background: #2faece;
+    width: 690rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    text-align: center;
+    color: #f2f2f2;
+    font-size: 38rpx;
+    margin:64rpx 30rpx 32rpx;
+    border-radius: 10rpx;
+    font-family: "Adobe 黑体 Std";
+    font-weight: 600;    
+}
+.contenttitle{
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    background: #fff;
+    margin-top: 30rpx;
+    padding-left: 24rpx;
+    box-sizing: border-box;
+    color: #2faece;
+    font-family: "Adobe 黑体 Std";
+    font-size: 30rpx;
+    font-weight: 600;
+}
+.viewtextshort{
+    width: 140rpx;
+}
+.additemwrap{
+     width: 100%;
+    height: 88rpx;
+    background: #fff;
+    box-sizing: border-box;
+    padding-left: 30rpx;
+    font-size: 30rpx;
+    color: #202020;
+    font-weight: 600;
+    line-height: 88rpx;
+    font-family: "Adobe 黑体 Std";
+    margin-top: 40rpx;  
+}
+.additem{
+    width: 40%;
+    float: left;
+}
+.addicon{
+    float: right;
+    width: 48rpx;
+    height: 48rpx;
+    background: url(../../images/addicon.png) no-repeat;
+    background-size: 48rpx 48rpx;
+    margin:20rpx 28rpx;
+}
+.sumwrap{
+    margin-top: 10rpx;
+}
+.btnwhite{
+    width: 310rpx;
+    height: 88rpx;
+    background: #fff;
+    border: 1px solid #c3c3c3;
+    line-height: 88rpx;
+    text-align: center;
+    color:#9a9a9a;
+    font-size: 38rpx;
+    font-weight: 600; 
+    font-family: "Adobe 黑体 Std";
+    border-radius: 10rpx;
+    margin: 0 30rpx;
+    float: left;
+}
+.btnhover{
+    background: #34c5ea;
+}
+.hoverclass{
+    background: blue;
+}

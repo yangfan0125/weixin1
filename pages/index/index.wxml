@@ -1,0 +1,161 @@
+<!--index.wxml-->
+<view class="swiper-tab">
+  <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">基本信息</view>
+  <view class="swiper-tab-list line"></view>
+  <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">项目信息</view>
+</view>
+<swiper current="{{currentTab}}" class="swiper-box" duration="300" style="height:3000rpx" bindchange="bindChange">
+  <!-- 我是基本信息 -->
+  <swiper-item>
+    <view class="taxtype">增值税普通发票</view>
+    <view class="part">
+      <view class="title">购买方信息</view>
+      <view class="wrap">
+        <input type="text" placeholder="请输入购买方名称" class="inputitem"  placeholder-class="placeholder"/>
+        <input type="text" placeholder="请输入购买方地址" class="inputitem" placeholder-class="placeholder"/>
+        <input type="number" placeholder="请输入购买方电话" class="inputitem" placeholder-class="placeholder"/>
+        <input type="text" placeholder="请输入纳税人识别号" class="inputitem" placeholder-class="placeholder"/>
+        <input type="text" placeholder="请输入开户银行" class="inputitem" placeholder-class="placeholder"/>
+        <input type="number" placeholder="请输入银行账号" class="inputitem" placeholder-class="placeholder"/>
+        <picker bindchange="buyerbankpicker" value="{{buyerbankindex}}" range="{{buyerbank}}">
+          <view class="inputitem pickeritem inputlast">
+              请选择银行类别：<view class="pickercontent">{{buyerbank[buyerbankindex]}}</view>
+          </view>
+        </picker>
+        
+      </view>
+    </view>
+    <view class="part">
+      <view class="title">销售方信息</view>
+      <view class="wrap">
+        <input type="text" placeholder="请输入销售方名称 " class="inputitem"  placeholder-class="placeholder"/>
+        <input type="text" placeholder="请输入销售方地址 " class="inputitem" placeholder-class="placeholder"/>
+        <input type="number" placeholder="请输入销售方电话" class="inputitem" placeholder-class="placeholder"/>
+        <input type="text" placeholder="请输入纳税人识别号" class="inputitem" placeholder-class="placeholder"/>
+        <input type="text" placeholder="请输入开户银行" class="inputitem" placeholder-class="placeholder"/>
+        <input type="number" placeholder="请输入银行账号" class="inputitem" placeholder-class="placeholder"/>
+        <picker bindchange="buyerbankpicker" value="{{buyerbankindex}}" range="{{buyerbank}}">
+          <view class="inputitem pickeritem inputlast">
+              请选择银行类别：<view class="pickercontent">{{buyerbank[buyerbankindex]}}</view>
+          </view>
+        </picker>
+        
+      </view>
+    </view>
+     <view class="part">
+      <view class="title">联系人信息</view>
+      <view class="wrap">
+        <input type="text" placeholder="请输入姓名 " class="inputitem"  placeholder-class="placeholder"/>
+        <input type="number" placeholder="请输入手机号码" class="inputitem" placeholder-class="placeholder"/>
+        <input type="idcard" placeholder="请输入身份证号码" class="inputitem inputlast" placeholder-class="placeholder"/>
+      </view>
+    </view> 
+    <view class="part">
+      <view class="radioitem">
+        <text class="radiotext">代开人类型</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label  wx:for="{{persontype}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" class="radio" disabled="true"/>                   {{item.value}}
+          </label>
+        </radio-group>
+      </view>  
+      <view class="radioitem">
+        <text class="radiotext">是否减免税</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label  wx:for="{{freetax}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}" class="radio"/>                   {{item.value}}
+          </label>
+        </radio-group>
+      </view>
+      <view class="wrap">
+        <view class="wrapborder">
+          <text class="radiotext radiotext1">减免税种</text>
+          <input class="inputitem inputitemshort inputlast" value="增值税" disabled="true"/>
+        </view>  
+        <view class="wrapborder">
+          <view class="viewtext">税种减免类型</view>
+          <picker bindchange="buyerbankpicker" value="{{buyerbankindex}}" range="{{buyerbank}}" class="picker">
+            <view >
+                <view class="pickercontent">{{buyerbank[buyerbankindex]}}</view>
+            </view>
+          </picker>
+        </view>  
+        <view class="wrapborder inputlast">
+          <text class="radiotext radiotext1">减免原因</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="请输入减免原因" />
+        </view>  
+      </view>
+    </view>
+    <view class="btn" hover-class="btnhover" hover="true">下一步</view>
+  </swiper-item>
+
+  <!-- 我是项目信息 -->
+  <swiper-item>
+    <view class="taxtype">增值税普通发票</view>
+    <view class="contenttitle">货物或应税劳务、服务名称1</view>
+    <view class="wrap">
+      <view class="wrapborder">
+          <text class="radiotext radiotext1">征收品目</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="请输入征收品目" type="text"/>
+      </view> 
+      <view class="wrapborder">
+          <view class="viewtext viewtextshort">计量单位</view>
+          <picker bindchange="buyerbankpicker" value="{{buyerbankindex}}" range="{{buyerbank}}" class="picker">
+            <view >
+                <view class="pickercontent">{{buyerbank[buyerbankindex]}}</view>
+            </view>
+          </picker>
+      </view> 
+      <view class="wrapborder">
+          <text class="radiotext radiotext1">数量</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="请输入数量" type="number"/>
+      </view> 
+      <view class="wrapborder">
+          <text class="radiotext radiotext1">单价</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="请输入单价" type="number"/>
+      </view>  
+      <view class="wrapborder">
+          <text class="radiotext radiotext1">含税金额</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="" type="number"/>
+      </view> 
+      <view class="wrapborder">
+          <text class="radiotext radiotext2">不含税销售额</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="" type="number" disabled="true"/>
+      </view> 
+       <view class="wrapborder">
+          <view class="viewtext viewtextshort">征收率</view>
+          <picker bindchange="buyerbankpicker" value="{{buyerbankindex}}" range="{{buyerbank}}" class="picker">
+            <view >
+                <view class="pickercontent">{{buyerbank[buyerbankindex]}}</view>
+            </view>
+          </picker>
+      </view>
+      <view class="wrapborder inputlast">
+          <text class="radiotext radiotext2">税额</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="" type="number" disabled="true"/>
+      </view>
+    </view>
+    <view class="additemwrap">
+      <view class="additem">添加项目</view>
+      <view class="addicon"></view>
+    </view>
+    <view class="sumwrap wrap">
+      <view class="wrapborder">
+          <text class="radiotext radiotext2">税价合计</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="" type="number" disabled="true"/>
+      </view> 
+      <view class="wrapborder">
+          <text class="radiotext radiotext2">减免税(费)额</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="" type="number" disabled="true"/>
+      </view>
+       <view class="wrapborder inputlast">
+          <text class="radiotext radiotext2">应补税额</text>
+          <input class="inputitem inputitemshort inputlast" placeholder="" type="number" disabled="true"/>
+      </view> 
+    </view>
+    <view class="btn" hover-class="btnhover" hover="true">正式提交</view>
+    <view class="btnwhite">暂存</view>
+    <view class="btnwhite">返回</view>
+  </swiper-item>
+
+</swiper>
